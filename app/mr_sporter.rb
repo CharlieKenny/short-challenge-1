@@ -1,8 +1,11 @@
 require 'sinatra/base'
+require 'sinatra'
+
+set :views, proc { File.join(root, '', './app/views') }
 
 class MrSporter < Sinatra::Base
   get '/' do
-    'Hello MrSporter!'
+    erb :index
   end
 
   # start the server if ruby file executed directly
